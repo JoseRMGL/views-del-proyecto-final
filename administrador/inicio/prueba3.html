@@ -30,21 +30,35 @@
     }
     .cake-card {
       margin: 15px;
-      border: 1px solid #ff66b2;
       border-radius: 10px;
       overflow: hidden;
       text-align: center;
+      transition: transform 0.3s; /* Efecto de transición */
+    }
+    .cake-card:hover {
+      transform: scale(1.05); /* Aumentar el tamaño en hover */
+    }
+    .cake-card h6 {
+      background-color: transparent; /* Color predeterminado */
+      color: #000000; /* Color del texto */
+      transition: background-color 0.3s; /* Efecto de transición */
+      padding: 10px; /* Espacio interno */
+    }
+    .cake-card:hover h6 {
+      background-color: #ff66b2; /* Color de fondo en hover */
+      color: #fff;
     }
     .cake-card img {
       width: 100%;
       height: auto;
     }
     .cake-container {
-      height: 400px;
-      overflow-y: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Centrar las tarjetas */
     }
     .footer {
-      padding: 20px;
+      padding: 0px 20px;
       text-align: center;
       border-top: 1px solid #ff66b2;
       background-color: #f8f9fa;
@@ -57,11 +71,26 @@
       font-weight: bold;
       margin-top: 10px;
     }
+    .iconos {
+      color: #ff66b2;
+    }
     .footer-logo {
       width: 200px;
     }
     .footer-section {
       margin: 20px 0;
+    }
+    .footer-section ul li {
+      list-style: none;
+    }
+    .left-section, .right-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center; /* Centrar el texto */
+    }
+    .right-section {
+      width: 70%; /* Aumentar el ancho del contenedor derecho */
     }
     @media (max-width: 767px) {
       .btn-pink {
@@ -90,8 +119,8 @@
         <div class="me-3">
           <i class="bi bi-search" id="search-icon" style="cursor: pointer;"></i>
         </div>
-        <div class="input-group search-box" id="search-box">
-          <input type="text" class="form-control" placeholder="Buscar">
+        <div class="input-group search-box me-3" id="search-box">
+          <input type="text" class="form-control" placeholder="Buscar" id="search-input">
           <button class="btn btn-outline-secondary" type="button">
             <i class="bi bi-search"></i>
           </button>
@@ -99,27 +128,26 @@
         <button class="btn btn-pink d-none d-md-inline">INICIAR SESIÓN</button>
       </div>
     </div>
+    <nav class="navbar navbar-expand-md bg-white">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="#">PRODUCTOS</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">ESPECIALIDADES</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">NOSOTROS</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">UBICACIONES</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
   </header>
-
-  <nav class="navbar navbar-expand-md bg-white">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#">PRODUCTOS</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">ESPECIALIDADES</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">NOSOTROS</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">UBICACIONES</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+  
   <div class="container my-4">
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-2 left-section">
         <h5>Selecciona lo que se te antoja:</h5>
         <div>
           <input type="checkbox" id="todos" name="pastel" value="todos">
@@ -128,10 +156,22 @@
           <label for="clasico">Clásico</label><br>
           <input type="checkbox" id="chocolate" name="pastel" value="chocolate">
           <label for="chocolate">Pastel de Chocolate</label><br>
+          <input type="checkbox" id="tripoe_chocolate" name="pastel" value="triple chocolate">
+          <label for="tripoe_chocolate">Triple chocolate</label><br>
+          <input type="checkbox" id="con_ganache" name="pastel" value="con ganache">
+          <label for="con_ganache">Con ganache</label><br>
           <input type="checkbox" id="vainilla" name="pastel" value="vainilla">
-          <label for="vainilla">Pastel de Vainilla</label><br>
+          <label for="vainilla">Pastel de vainilla</label><br>
           <input type="checkbox" id="esponjoso" name="pastel" value="esponjoso">
           <label for="esponjoso">Esponjoso</label><br>
+          <input type="checkbox" id="crema_pastelera" name="pastel" value="crema pastelera">
+          <label for="crema_pastelera">Con crema pastelera</label><br>
+          <input type="checkbox" id="relleno_de_frutas" name="pastel" value="relleno de frutas">
+          <label for="relleno_de_frutas">Relleno de frutas</label><br>
+          <input type="checkbox" id="zanahoria" name="pastel" value="zanahoria">
+          <label for="zanahoria">Pastel de zanahoria</label><br>
+          <input type="checkbox" id="nueces_y_pasas" name="pastel" value="nueces y pasas">
+          <label for="nueces_y_pasas">Con nueces y pasas</label><br>
         </div>
       </div>
 
@@ -140,7 +180,7 @@
           <!-- Tarjetas de pasteles -->
           <div class="col-6 col-md-4 mb-3">
             <div class="cake-card">
-              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Pastel 1">
+              <img src="../img/golden-marble-pastel-de-boda-de-3-pisos.jpg" class="card-img-top" alt="Pastel 1">
               <h6>Pastel de Fresa</h6>
             </div>
           </div>
@@ -200,67 +240,70 @@
           </div>
         </div>
       </div>
-
-      <div class="col-md-2">
+      <div class="col-md-2 right-section">
         <h5>¿Quiénes somos?</h5>
-        <p>En Click&Cake creemos que cada celebración merece un toque especial y delicioso.</p>
+        <p>En Click&Cake creemos que cada celebración merece un toque especial y delicioso. Somos una pastelería apasionada por crear momentos inolvidables a través de nuestros pasteles artesanales, cuidadosamente elaborados con ingredientes de la más alta calidad. Nos especializamos en ofrecer una amplia variedad de pasteles para todas las ocasiones, desde cumpleaños y bodas, hasta eventos especiales como aniversarios y baby showers.</p>
       </div>
     </div>
   </div>
-
   <footer class="footer">
-
-
-    
     <div class="container d-flex justify-content-between flex-row">
       <div class="footer-section">
-        <img src="../img/logo_de_empresa.png" class="footer-logo" alt="Logo Click & Cake">
+        <img src="../img/logo_empresa2.png" class="footer-logo" alt="Logo Click & Cake">
+        <p>&copy; 2024 Click&Cake</p>
       </div>
       <div class="footer-section">
         <h6>Escríbenos</h6>
-        <p>WhatsApp: 1515-5656</p>
-        <p>Llámanos: 1515-2020</p>
+        <p><i class="bi bi-whatsapp iconos"></i> 1515-5656</p>
+        <p><i class="bi bi-telephone-plus iconos"></i>1515-2020</p>
       </div>
-      <div class="footer-section">
-        <h6>Menú</h6>
-        <p><a href="#">Pastelería</a></p>
-        <p><a href="#">Menú</a></p>
-        <p><a href="#">Eventos</a></p>
+      <div class="footer-section text-start">
+        <ul>
+          <h6>Menú</h6>
+          <li><a href="#">Pastelería</a></li>
+          <li><a href="#">Menú</a></li>
+          <li><a href="#">Eventos</a></li>
+        </ul>
       </div>
-      <div class="footer-section">
-        <h6>Ubicaciones</h6>
-        <p>C.C. Oakland Mall</p>
-        <p>Zentrum Plaza, Huehuetenango</p>
-        <p>Zona 10</p>
-        <p>Prolongación Xela</p>
-        <p>Carretera a El Salvador</p>
-        <p>Mixco</p>
+      <div class="footer-section text-start">
+        <ul>
+          <h6>Ubicaciones</h6>
+          <li>C.C. Oakland Mall</li>
+          <li>Zentrum Plaza, Huehuetenango</li>
+          <li>Zona 10</li>
+          <li>Prolongación Xela</li>
+          <li>Carretera a El Salvador</li>
+          <li>Mixco</li>
+        </ul>
       </div>
       <div class="footer-section">
         <h6>Redes Sociales</h6>
         <p>
-          <a href="#">Instagram</a> | 
-          <a href="#">TikTok</a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-tiktok"></i></a>
         </p>
       </div>
-      <p>&copy; 2024 Click&Cake</p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.getElementById('search-icon').addEventListener('click', function() {
-      var searchBox = document.getElementById('search-box');
-      var searchIcon = document.getElementById('search-icon');
-      if (searchBox.style.display === 'flex') {
-        searchBox.style.display = 'none';
-        searchIcon.style.display = 'block'; // Mostrar el ícono de búsqueda nuevamente
-      } else {
-        searchBox.style.display = 'flex';
-        searchIcon.style.display = 'none'; // Ocultar el ícono de búsqueda
-      }
+    const searchIcon = document.getElementById('search-icon');
+    const searchBox = document.getElementById('search-box');
+    const searchInput = document.getElementById('search-input');
+
+    searchIcon.addEventListener('click', function() {
+      searchBox.style.display = 'flex';
+      searchInput.focus(); // Enfocar el cuadro de búsqueda
+      searchIcon.style.display = 'none'; // Ocultar el ícono de búsqueda
     });
 
+    searchInput.addEventListener('blur', function() {
+      searchBox.style.display = 'none'; // Ocultar el cuadro de búsqueda al perder foco
+      searchIcon.style.display = 'block'; // Mostrar el ícono de búsqueda
+    });
+    
     // Lógica para manejar las selecciones de los checkboxes
     const todosCheckbox = document.getElementById('todos');
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:not(#todos)');

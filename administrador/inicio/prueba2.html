@@ -11,70 +11,318 @@
       color: #ff66b2;
       font-size: 1.5rem;
       font-weight: bold;
+      text-align: center;
+      flex-grow: 1;
+      text-decoration: none;
     }
     .navbar-nav .nav-link {
       color: #ff66b2;
       font-weight: bold;
-      margin: 0 15px;
+      margin: 0 10px;
     }
-    .btn-login {
+    .quienes_somos {
+      width: 350px;
+      border: 1px solid #ff66b2;
+      max-height: 600px;
+    }
+    .btn-pink {
       background-color: #ff66b2;
       color: white;
       border: none;
+    }
+    .search-box {
+      display: none;
+      max-width: 200px;
+    }
+    .cake-card {
+      margin: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .cake-card:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+    .cake-card h6 {
+      background-color: transparent;
+      color: #000000;
+      transition: background-color 0.3s;
+      padding: 10px;
+    }
+    .cake-card:hover h6 {
+      background-color: #ff66b2;
+      color: #fff;
+    }
+    .cake-card img {
+      width: 100%;
+      height: auto;
+    }
+    .cake-container {
+      width: 900px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .footer {
+      padding: 0px 20px;
+      text-align: center;
+      border-top: 1px solid #ff66b2;
+      background-color: #f8f9fa;
+    }
+    .footer a {
+      color: #ff66b2;
+      text-decoration: none;
+    }
+    .footer h6 {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .iconos {
+      color: #ff66b2;
+    }
+    .footer-logo {
+      width: 200px;
+    }
+    .footer-section {
+      margin: 20px 0;
+    }
+    .footer-section ul li {
+      list-style: none;
+    }
+    @media (max-width: 767px) {
+      .btn-pink {
+        width: auto;
+        padding: 5px 10px;
+        font-size: 0.9rem;
+      }
+      .search-box {
+        width: 100%;
+      }
+      .cart-icon {
+        order: -1;
+      }
     }
   </style>
 </head>
 <body>
   <header class="bg-light p-3">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
-        <!-- Logo centrado -->
-        <div class="flex-grow-1 text-center">
-          <span class="header-text">CLICK & CAKE</span>
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="" class="header-text"><span class="header-text">CLICK & CAKE</span></a>
+      
+      <div class="d-flex align-items-center">
+        <div class="me-3 cart-icon">
+          <i class="bi bi-cart"></i>
+          <span>(0)</span>
         </div>
-        
-        <!-- Barra de búsqueda e íconos -->
-        <div class="d-flex justify-content-end align-items-center">
-          <!-- Icono del carrito -->
-          <div class="me-3">
-              <span>(0)</span>
-              <img src="../img/shopping.png" width="33px" alt="">
-          </div>
-          
-          <!-- Campo de búsqueda -->
-          <div class="input-group me-3" style="width: 200px;">
-            <input type="text" class="form-control" placeholder="Buscar">
-            <button class="btn btn-outline-secondary" type="button">
-              <i class="bi bi-search"></i>
-            </button>
-          </div>
-
-          <!-- Botón de iniciar sesión -->
-          <button class="btn btn-login">INICIAR SESIÓN</button>
+        <div class="me-3">
+          <i class="bi bi-search" id="search-icon" style="cursor: pointer;"></i>
         </div>
+        <div class="input-group search-box me-3" id="search-box">
+          <input type="text" class="form-control" placeholder="Buscar" id="search-input">
+          <button class="btn btn-outline-secondary" type="button">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+        <button class="btn btn-pink d-none d-md-inline">INICIAR SESIÓN</button>
       </div>
     </div>
-  </header>
-<!-- Menu -->
-  <nav class="bg-white">
-    <div class="container row">
-      <ul class="navbar-nav d-flex flex-row justify-content-center">
-        <li class="">
-          <a class="nav-link" href="#">PRODUCTOS</a>
-        </li>
-        <li class="">
-          <a class="nav-link" href="#">ESPECIALIDADES</a>
-        </li>
-        <li class="">
-          <a class="nav-link" href="#">NOSOTROS</a>
-        </li>
-        <li class="">
-          <a class="nav-link" href="#">UBICACIONES</a>
-        </li>
-      </ul>
+    <nav class="navbar navbar-expand-md">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">PRODUCTOS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">ESPECIALIDADES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">NOSOTROS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">UBICACIONES</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
+  </header>
+  
+  <div class="container-fluid my-4">
+    <div class="row justify-content-around mx-4">
+      <div class="col-md-2">
+        <h5>Selecciona lo que se te antoja:</h5>
+        <div>
+          <input type="checkbox" id="todos" name="pastel" value="todos">
+          <label for="todos">Todos</label><br>
+          <input type="checkbox" id="clasico" name="pastel" value="clasico">
+          <label for="clasico">Clásico</label><br>
+          <input type="checkbox" id="chocolate" name="pastel" value="chocolate">
+          <label for="chocolate">Pastel de Chocolate</label><br>
+          <input type="checkbox" id="tripoe_chocolate" name="pastel" value="triple chocolate">
+          <label for="tripoe_chocolate">Triple chocolate</label><br>
+          <input type="checkbox" id="con_ganache" name="pastel" value="con ganache">
+          <label for="con_ganache">Con ganache</label><br>
+          <input type="checkbox" id="vainilla" name="pastel" value="vainilla">
+          <label for="vainilla">Pastel de vainilla</label><br>
+          <input type="checkbox" id="esponjoso" name="pastel" value="esponjoso">
+          <label for="esponjoso">Esponjoso</label><br>
+          <input type="checkbox" id="crema_pastelera" name="pastel" value="crema pastelera">
+          <label for="crema_pastelera">Con crema pastelera</label><br>
+          <input type="checkbox" id="relleno_de_frutas" name="pastel" value="relleno de frutas">
+          <label for="relleno_de_frutas">Relleno de frutas</label><br>
+          <input type="checkbox" id="zanahoria" name="pastel" value="zanahoria">
+          <label for="zanahoria">Pastel de zanahoria</label><br>
+          <input type="checkbox" id="nueces_y_pasas" name="pastel" value="nueces y pasas">
+          <label for="nueces_y_pasas">Con nueces y pasas</label><br>
+        </div>
+      </div>
+      <div class="col-md-8 cake-container">
+        <div class="row">
+          <!-- Tarjetas de pasteles -->
+          <div class="col-6 col-md-4 mb-3">
+            <div class="cake-card">
+              <img src="../img/golden-marble-pastel-de-boda-de-3-pisos.jpg" class="card-img-top" alt="Pastel 1">
+              <h6>Pastel de Fresa</h6>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 mb-3">
+            <div class="cake-card">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Pastel 2">
+              <h6>Pastel de Chocolate</h6>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 mb-3">
+            <div class="cake-card">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Pastel 3">
+              <h6>Pastel de Vainilla</h6>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 mb-3">
+            <div class="cake-card">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Pastel 4">
+              <h6>Pastel de Limón</h6>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 mb-3">
+            <div class="cake-card">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Pastel 5">
+              <h6>Pastel de Red Velvet</h6>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 mb-3">
+            <div class="cake-card">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Pastel 6">
+              <h6>Pastel de Zanahoria</h6>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 mb-3">
+            <div class="cake-card">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Pastel 7">
+              <h6>Pastel de Coco</h6>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 mb-3">
+            <div class="cake-card">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Pastel 8">
+              <h6>Pastel de Tres Leches</h6>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 mb-3">
+            <div class="cake-card">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Pastel 9">
+              <h6>Pastel de Nutella</h6>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 mb-3">
+            <div class="cake-card">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Pastel 10">
+              <h6>Pastel de Café</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 quienes_somos d-flex flex-column justify-content-center">
+        <h5>¿Quiénes somos?</h5>
+        <p>En Click&Cake creemos que cada celebración merece un toque especial y delicioso. Somos una pasteleria apasionada por crear momentos inolvidables a traves de nuestros pasteles artesanales, cuidadosamente elaborados con ingredientes de la mas alta calidad. Nos especializacmos en ofrecer una amplia variedad de pasteles para todas las ocasiones, desde cumpleaños y bodas, hasta eventos especiales como aniversarios y baby showers</p>
+        <img class="text-center" src="../img/quienes somos.png" width="300" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- <footer class="footer">
+    <div class="container d-flex justify-content-between flex-row">
+      <div class="footer-section">
+        <img src="../img/logo_empresa2.png" class="footer-logo" alt="Logo Click & Cake">
+        <p>&copy; 2024 Click&Cake</p>
+      </div>
+      <div class="footer-section">
+        <h6>Escríbenos</h6>
+        <p><i class="bi bi-whatsapp iconos"></i> 1515-5656</p>
+        <p><i class="bi bi-telephone-plus iconos"></i>1515-2020</p>
+      </div>
+      <div class="footer-section text-start">
+        <ul>
+          <h6>Menú</h6>
+          <li><a href="#">Pastelería</a></li>
+          <li><a href="#">Menú</a></li>
+          <li><a href="#">Eventos</a></li>
+        </ul>
+      </div>
+      <div class="footer-section text-start">
+        <ul>
+          <h6>Ubicaciones</h6>
+          <li>C.C. Oakland Mall</li>
+          <li>Zentrum Plaza, Huehuetenango</li>
+          <li>Zona 10</li>
+          <li>Prolongación Xela</li>
+          <li>Carretera a El Salvador</li>
+          <li>Mixco</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h6>Redes Sociales</h6>
+        <p>
+          <a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2F&hl=es-es&aa_click=8891933284028179" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://es-la.facebook.com/login/device-based/regular/login/" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.tiktok.com/login?lang=es&redirect_url=https%3A%2F%2Fwww.tiktok.com%2Fupload%3Flang%3Des" target="_blank"><i class="bi bi-tiktok"></i></a>
+        </p>
+      </div>
+    </div>
+  </footer> -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const searchIcon = document.getElementById('search-icon');
+    const searchBox = document.getElementById('search-box');
+    const searchInput = document.getElementById('search-input');
+
+    searchIcon.addEventListener('click', function() {
+      searchBox.style.display = 'flex';
+      searchInput.focus(); // Enfocar el cuadro de búsqueda
+      searchIcon.style.display = 'none'; // Ocultar el ícono de búsqueda
+    });
+
+    searchInput.addEventListener('blur', function() {
+      searchBox.style.display = 'none'; // Ocultar el cuadro de búsqueda al perder foco
+      searchIcon.style.display = 'block'; // Mostrar el ícono de búsqueda
+    });
+    
+    // Lógica para manejar las selecciones de los checkboxes
+    const todosCheckbox = document.getElementById('todos');
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:not(#todos)');
+
+    todosCheckbox.addEventListener('change', function() {
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = todosCheckbox.checked;
+      });
+    });
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        if (!checkbox.checked) {
+          todosCheckbox.checked = false; // Desmarcar "Todos" si se desmarca alguna opción
+        } else if (Array.from(checkboxes).every(cb => cb.checked)) {
+          todosCheckbox.checked = true; // Marcar "Todos" si todas las opciones están seleccionadas
+        }
+      });
+    });
+  </script>
 </body>
 </html>
