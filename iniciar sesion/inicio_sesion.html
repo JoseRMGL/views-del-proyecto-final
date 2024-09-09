@@ -5,26 +5,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style="font-family: Zain, sans-serif fs-3">
+    <img src="../administrador/img/logo_empresa2.png" alt="" width="300px" class="position-absolute">
     <main class="d-flex justify-content-center align-items-center" style="height: 100vh;">
         <div class="container rounded p-4" style="width: 50vh; border: solid 3px #ffc7de;">
-            <h2 class="text-center mb-4">Iniciar Sesion</h2>
+            <h2 class="text-center mb-4" style="color: #ff66b2;">INICIAR SESIÓN</h2>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input class="form-control" type="email" id="email" placeholder="Ingrese su email">
+                <input class="form-control" type="email" id="email" placeholder="Ingrese su email" style="background-color: #ffc7de; border: 3px solid #fb74a2;">
             </div>
             <div class="mb-3">
                 <label for="contrasenia" class="form-label">contraseña</label>
-                <input class="form-control" type="password" id="contrasenia" placeholder="Ingrese su contraseña">
+                <input class="form-control " type="password" id="contrasenia" placeholder="Ingrese su contraseña" style="background-color: #ffc7de; border: 3px solid #fb74a2;">
             </div>
-            <div class="text-center"><button class="rounded btn " style="background-color: #ffc7de; color: #fff;">Iniciar Sesion</button></div>
+            <div class="text-center"><button class="rounded-pill text-black" type="submit">Iniciar Sesion</button></div>
             <hr>
-            <div class="form-text">¿No tienes cuenta? ¡puedes crear una!</div>
-            <div class="text-center"><button class="rounded btn " style="background-color: #ffc7de; color: #fff;">Crear Cuenta Nueva</button></div>
+            <div class="form-text" style="color: #fb74a2;">¿No tienes cuenta? ¡puedes crear una!</div>
+            <div class="text-center"><a href="crear_cuenta.html"><button class="rounded-pill mt-3 text-black">Crear Cuenta Nueva</button></a></div>
         </div>
     </main>
 

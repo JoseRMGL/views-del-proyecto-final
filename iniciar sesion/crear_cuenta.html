@@ -4,23 +4,78 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Crear Cuenta</title>
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
+<body style="font-family: Zain, sans-serif fs-3">
+    <img src="../administrador/img/logo_empresa2.png" alt="" width="300px" class="position-absolute">
     <main class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="container border rounded p-4" style="width: 70vh;">
-            <h2 class="text-center mb-4">Crear cuenta</h2>
-            <div class="mb-3">
-                <label for="formFile" class="form-label">Default file input example</label>
-                <input class="form-control" type="file" id="formFile">
+        <div class="container rounded p-4" style="width: 55vh; border: solid 3px #ffc7de;">
+            <h2 class="text-center mb-4" style="color: #ff66b2;">Registrarse</h2>
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <div>
+                        <div class="mb-3"></div>
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input class="form-control" type="text" id="nombre" placeholder="Ingrese su nombre"
+                            style="background-color: #ffc7de; border: 3px solid #fb74a2;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input class="form-control" type="text" id="apellido" placeholder="Ingrese su apellido"
+                            style="background-color: #ffc7de; border: 3px solid #fb74a2;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input class="form-control" type="email" id="email" placeholder="Ingrese su email"
+                            style="background-color: #ffc7de; border: 3px solid #fb74a2;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contrasenia" class="form-label">contraseña</label>
+                        <input class="form-control " type="password" id="contrasenia"
+                            placeholder="Ingrese su contraseña"
+                            style="background-color: #ffc7de; border: 3px solid #fb74a2;">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="mb-3"></div>
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input class="form-control" type="number" id="telefono" placeholder="Ingrese su telefono"
+                            style="background-color: #ffc7de; border: 3px solid #fb74a2;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input class="form-control" type="text" id="direccion" placeholder="Ingrese su direccion"
+                            style="background-color: #ffc7de; border: 3px solid #fb74a2;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Departamento" class="form-label">Departamento</label>
+                        <input class="form-control" type="text" id="Departamento" placeholder="Ingrese su Departamento"
+                            style="background-color: #ffc7de; border: 3px solid #fb74a2;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="municipio" class="form-label">Municipio</label>
+                        <input class="form-control" type="text" id="municipio" placeholder="Ingrese su municipio"
+                            style="background-color: #ffc7de; border: 3px solid #fb74a2;">
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="formFile" class="form-label">Default file input example</label>
-                <input class="form-control" type="file" id="formFile">
-            </div>
+            
+            <div class="text-center"><button type="submit" class="rounded-pill text-black">Registrarse</button></div>
+            <hr>
+            <div class="form-text" style="color: #fb74a2;">¿Ya tienes cuenta? ¡Inicia Sesión aquí!</div>
+            <div class="text-center"><a href="inicio_sesion.html"><button class="rounded-pill mt-3 text-black">Iniciar Sesión</button></a></div>
         </div>
     </main>
 
