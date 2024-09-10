@@ -8,35 +8,40 @@
     <link rel="stylesheet" href="login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <!-- font titulo -->
+    <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Sevillana&display=swap" rel="stylesheet">
-    <!-- font letras -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+CU:wght@100..400&family=Sevillana&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+CU:wght@100..400&family=Sevillana&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="fondo">
-    <img src="../administrador/img/logo_empresa2.png" alt="" width="300px" class="logo-login">
-    <main class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="container rounded p-4" style="width: 50vh; border: solid 3px #ffc7de; font-weight: bold;">
-            <h2 class="text-center mb-4 titulo" style="color: #fb74a2;">INICIAR SESIÓN</h2>
-            <div class="mb-3">
-                <label for="email" class="form-label verde">Email</label>
-                <input class="form-control" type="email" id="email" placeholder="Ingrese su email" style="background-color: #ffc7de; border: 3px solid #fb74a2;">
+    <div class="contenedor">
+        <img src="../administrador/img/logo_empresa2.png" alt="" width="300px" class="logo-login">
+        <main class="d-flex justify-content-center align-items-center tarjeta-login" style="height: 100vh;">
+            <div class="container rounded p-4" style="width: 50vh; border: solid 3px #ffc7de; font-weight: bold;">
+                <h2 class="text-center mb-4 titulo" style="color: #fb74a2;">INICIAR SESIÓN</h2>
+                <div class="mb-3">
+                    <label for="email" class="form-label verde">Email</label>
+                    <input class="form-control" type="email" id="email" placeholder="Ingrese su email"
+                        style="background-color: #ffc7de; border: 3px solid #fb74a2;">
+                </div>
+                <div class="mb-3">
+                    <label for="contrasenia" class="form-label verde">Contraseña</label>
+                    <input class="form-control " type="password" id="contrasenia" placeholder="Ingrese su contraseña"
+                        style="background-color: #ffc7de; border: 3px solid #fb74a2;">
+                </div>
+                <div class="text-center"><button class="rounded-pill text-black" type="submit">Iniciar Sesion</button>
+                </div>
+                <hr>
+                <div class="verde">¿No tienes cuenta? ¡puedes crear una!</div>
+                <div class="text-center"><a href="crear_cuenta.html"><button class="rounded-pill mt-3 text-black">Crear
+                            Cuenta Nueva</button></a></div>
             </div>
-            <div class="mb-3">
-                <label for="contrasenia" class="form-label verde" >Contraseña</label>
-                <input class="form-control " type="password" id="contrasenia" placeholder="Ingrese su contraseña" style="background-color: #ffc7de; border: 3px solid #fb74a2;">
-            </div>
-            <div class="text-center"><button class="rounded-pill text-black" type="submit" >Iniciar Sesion</button></div>
-            <hr>
-            <div class="verde">¿No tienes cuenta? ¡puedes crear una!</div>
-            <div class="text-center"><a href="crear_cuenta.html"><button class="rounded-pill mt-3 text-black">Crear Cuenta Nueva</button></a></div>
-        </div>
-    </main>
+        </main>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
