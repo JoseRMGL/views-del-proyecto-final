@@ -1,3 +1,29 @@
+* {
+  
+}
+.titulo {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.fondo {
+  background-image: url('../administrador/img/cupcakeClick.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px);
+}
+.verde {
+  color:  #375b06;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-size: 20px;
+  font-style: oblique;
+}
+
 button {
     font-size: 18px;
     letter-spacing: 2px;
@@ -47,9 +73,9 @@ button {
 
   .logo-login {
     position: absolute;
-    left: 200px;
+    left: 150px;
+    top: 100px;
     width: 300px;
-    top: 150px;
   }
 
 /* @media (width <= 500) {
